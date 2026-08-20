@@ -1,4 +1,4 @@
-# YCornerGamemode
+# Y-Corner GameMode
 
 A lightweight [Paper](https://papermc.io/software/paper) plugin that assigns gamemodes by permission: trusted players join in **Creative**, everyone else joins in **Survival** and cannot switch to other modes.
 
