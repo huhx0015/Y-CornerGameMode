@@ -128,6 +128,7 @@ Copy the resulting JAR into `plugins/` and restart.
 
 ```
 YCornerGamemode/
+├── LICENSE
 ├── README.md
 ├── src/main/java/com/ycorner/gamemode/
 │   └── YCornerGamemode.java
@@ -147,7 +148,7 @@ This plugin provides **no commands** and **no config file**. All behavior is con
 
 ## License
 
-This project is open source. Add a `LICENSE` file before publishing (MIT is a common choice for Bukkit plugins).
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## Contributing
 
