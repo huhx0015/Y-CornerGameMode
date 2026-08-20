@@ -17,9 +17,6 @@ public final class YCornerGamemode extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
-        CommandBlockFixer commandBlockFixer = new CommandBlockFixer(this);
-        getServer().getPluginManager().registerEvents(commandBlockFixer, this);
-        getServer().getScheduler().runTaskLater(this, commandBlockFixer::scanLoadedWorlds, 40L);
         for (Player player : getServer().getOnlinePlayers()) {
             applyGamemode(player);
         }
