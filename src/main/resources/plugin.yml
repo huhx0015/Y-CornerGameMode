@@ -1,0 +1,5 @@
+name: YCornerGamemode
+version: 1.1.0
+main: com.ycorner.gamemode.YCornerGamemode
+api-version: '1.21'
+description: Forces creative on join for trusted players; survival for everyone else.
