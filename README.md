@@ -28,7 +28,7 @@ If `force-gamemode=true` is set with `gamemode=creative`, the server will force 
 
 ## Installation
 
-1. Download or build `YCornerGamemode-1.1.0.jar`
+1. Download or build `YCornerGamemode-1.2.0.jar`
 2. Place it in your server's `plugins/` folder
 3. Restart the server (do not use `/reload`)
 4. Grant permissions (see below)
@@ -119,7 +119,23 @@ javac -encoding UTF-8 -cp $cp -d $build `
   src/main/java/com/ycorner/gamemode/YCornerGamemode.java
 
 Copy-Item src/main/resources/plugin.yml $build\plugin.yml
-jar cf YCornerGamemode-1.0.0.jar -C $build .
+jar cf YCornerGamemode-1.2.0.jar -C $build .
+```
+
+### Compile (macOS / Linux)
+
+```bash
+API="libraries/io/papermc/paper/paper-api/26.2.build.112-stable/paper-api-26.2.build.112-stable.jar"
+KYORI=$(find libraries/net/kyori -name '*.jar' | paste -sd: -)
+JETBRAINS=$(find libraries/org/jetbrains -name '*.jar' | paste -sd: -)
+CP="$API:$KYORI:$JETBRAINS"
+
+mkdir -p build
+javac -encoding UTF-8 -cp "$CP" -d build \
+  src/main/java/com/ycorner/gamemode/YCornerGamemode.java
+
+cp src/main/resources/plugin.yml build/plugin.yml
+jar cf YCornerGamemode-1.2.0.jar -C build .
 ```
 
 Copy the resulting JAR into `plugins/` and restart.
@@ -145,6 +161,16 @@ YCornerGamemode/
 ## Commands & configuration
 
 This plugin provides **no commands** and **no config file**. All behavior is controlled through the `ycorner.gamemode.creative` permission.
+
+## Changelog
+
+### 1.2.0
+
+- Plugin is now **gamemode-only**. Command-block repair logic (`CommandBlockFixer`) was removed; it was unrelated to join/respawn gamemode enforcement.
+
+### 1.1.0
+
+- Initial public release: permission-based Creative vs Survival on join, respawn, and unauthorized gamemode changes.
 
 ## License
 
